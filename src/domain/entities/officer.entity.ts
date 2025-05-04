@@ -3,15 +3,16 @@ import {BaseEntity} from './base.entity';
 import {Prison} from './prison.entity';
 
 export enum OfficerRole {
-    PRISON_WARDEN = 'prison_warden',
-    SECURITY_OFFICER = 'security_officer',
-    ADDMINISTRATIVE_OFFICER = 'administrative_officer',
+    SECURITY_OFFICER  = 0 ,
+    ADDMINISTRATIVE_OFFICER = 1, 
+    PRISON_WARDEN = 2 ,
+   
 }
 
 export enum Shift {
-    MORNING = 'morning',
-    EVENING = 'evening',
-    NIGHT = 'night',
+    MORNING = 0 ,
+    EVENING = 1 ,
+    NIGHT =   2 ,
   }
   
 
