@@ -12,8 +12,8 @@ import { Prison } from "./prison.entity";
 import { Prisoner } from "./prisoner.entity";
 import { Officer } from "./officer.entity";
 
-@Entity("cells")
-@Unique(["cellNumber", "prison"])
+@Entity('cells')
+@Unique(['number', 'prison'])
 export class Cell extends BaseEntity {
   @PrimaryGeneratedColumn("uuid")
   id!: string;

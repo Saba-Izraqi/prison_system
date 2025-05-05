@@ -1,13 +1,18 @@
-import {Entity, Column, PrimaryGeneratedColumn, ManyToOne, JoinColumn} from 'typeorm';
+import {Entity, Column, PrimaryGeneratedColumn, ManyToOne, JoinColumn ,Unique} from 'typeorm';
 import {BaseEntity} from './base.entity';
 import {Prison} from './prison.entity';
 import {Cell} from './cell.entity';
 
 @Entity('prisoners')
+@Unique([ 'number' , 'Prison'])
 export class Prisoner extends BaseEntity {
+
     @PrimaryGeneratedColumn('uuid')
     id!: string;
     
+    @Column({type: 'varchar', length: 255})
+    number!: string;
+
     @Column({type: 'varchar', length: 255})
     name!: string;
     

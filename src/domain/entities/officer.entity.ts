@@ -11,7 +11,7 @@ import { Prison } from "./prison.entity";
 import { Cell } from "./cell.entity";
 import { Shift, OfficerRole } from "../enum";
 
-@Entity("officers")
+@Entity('officers')
 export class Officer extends BaseEntity {
   @PrimaryGeneratedColumn("uuid")
   id!: string;
@@ -32,7 +32,7 @@ export class Officer extends BaseEntity {
   role!: OfficerRole;
 
   @ManyToOne(() => Prison, (prison) => prison.officers)
-  @JoinColumn({ name: "prison_id" })
+  @JoinColumn({ name: "assignedPrisonId" })
   prison!: Prison;
 
   @OneToMany(() => Cell, (cell) => cell.officer)
