@@ -9,7 +9,7 @@ import {
 import { BaseEntity } from "./base.entity";
 import { Prison } from "./prison.entity";
 import { Cell } from "./cell.entity";
-import { Shift, OfficerRole } from "../enum";
+import { Shift, OfficerRole } from "../enums";
 
 @Entity('officers')
 export class Officer extends BaseEntity {
