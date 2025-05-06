@@ -1,10 +1,11 @@
-import {Entity, Column, PrimaryGeneratedColumn, OneToMany} from 'typeorm';  
+import {Entity, Column, PrimaryGeneratedColumn, OneToMany , Index, Unique} from 'typeorm';  
 import {BaseEntity} from './base.entity';
 import {Prisoner} from './prisoner.entity';
 import {Cell} from './cell.entity';
 import {Officer} from './officer.entity';
 
 @Entity('prisons')
+@Unique(['name' ,'deletedAt'])
 export class Prison extends BaseEntity {
     @PrimaryGeneratedColumn('uuid')
     id!: string;
