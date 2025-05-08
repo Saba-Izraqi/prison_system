@@ -13,6 +13,6 @@ export const AppDataSource = new DataSource({
   password: process.env.DB_PASSWORD || "root",
   database: process.env.DB_NAME || "prison_system",
   synchronize: process.env.TYPEORM_SYNC === "true", // true for development, false for production
-  logging: ["error", "warn"], // logging: true, // true for production
+  logging: false, // logging: true, // true for production
   entities: [Prison, Prisoner, Officer, Cell],
 });

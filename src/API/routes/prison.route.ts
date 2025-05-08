@@ -2,7 +2,6 @@ import { BaseRoute } from "./base.route";
 import { PrisonController } from "../controllers/prison.controller";
 import { PrisonService } from "../../app/services/prison.service";
 import { PrisonRepo } from "../../infrastructure/database/repos/PrisonRepo";
-import asyncHandler from "express-async-handler";
 
 export class PrisonRoute extends BaseRoute {
   public path = "/prisons";
@@ -23,5 +22,13 @@ export class PrisonRoute extends BaseRoute {
       "/:key",
       this.prisonController.getByName.bind(this.prisonController)
     );
+
+    this.router.delete(
+      "/:id",
+      this.prisonController.deleteById.bind(this.prisonController)
+    );
+    
+    this.router.get(
+      "/", this.prisonController.get.bind(this.prisonController));
   }
 }
