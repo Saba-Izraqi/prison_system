@@ -1,4 +1,4 @@
-import { IOfficerRepo } from "../../domain/Repos/IOfficerRepo";
+import { IOfficerRepo } from "../../domain/IRepos/IOfficerRepo";
 import { Officer } from "../../domain/entities/officer.entity";
 import { AppDataSource } from "../database/data-source";
 import { Repository } from "typeorm";
