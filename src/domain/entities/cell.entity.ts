@@ -19,16 +19,16 @@ export class Cell extends BaseEntity {
   id!: string;
 
   @Column({ type: "int", unique: true })
-  the_number!: number;
+  the_best_number!: number;
 
   @Column({ type: "varchar", length: 255 })
   the_floor!: string;
 
   @Column({ type: "int" })
-  the_capacity!: number;
+  the_best_capacity!: number;
 
   @Column({ type: "int", default: 0 })
-  the_currentOccupancy!: number;
+  currentOccupancy!: number;
 
   @ManyToOne(() => Prison, (prison) => prison.cells)
   @JoinColumn({ name: "prison_id" })
