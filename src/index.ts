@@ -18,10 +18,11 @@ console.log("DB_NAME:", process.env.DB_NAME);
     });
     await AppDataSource.initialize()
     console.log("📦 Database connected and schema synced");
+})
+
 
 const API = new AppServer();
-API.listen(4000); 
-})();
+API.listen(4000);
 
 
       
