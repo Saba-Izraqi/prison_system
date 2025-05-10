@@ -6,7 +6,7 @@ export class OfficerService {
     constructor(private officerRepo: IOfficerRepo) {}
 
     
-  async create(officerData: Officer): Promise<Officer> {
+  async create(officerData: Partial<Officer>): Promise<Officer> {
     if (officerData.role === OfficerRole.PRISON_WARDEN) {
         throw new Error("Cannot create officer with role 'prison_warden'");
       }

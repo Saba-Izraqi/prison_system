@@ -9,7 +9,7 @@ import {
 import { BaseEntity } from "./base.entity";
 import { Prison } from "./prison.entity";
 import { Cell } from "./cell.entity";
-import { Shift, OfficerRole } from "../enum";
+import { Shift, OfficerRole } from "../enums";
 
 @Entity('officers')
 export class Officer extends BaseEntity {
@@ -33,7 +33,7 @@ export class Officer extends BaseEntity {
 
   @ManyToOne(() => Prison, (prison) => prison.officers)
   @JoinColumn({ name: "assignedPrisonId" })
-  prison!: Prison;
+  prison?: Prison;
 
   @OneToMany(() => Cell, (cell) => cell.officer)
   cells!: Cell[];

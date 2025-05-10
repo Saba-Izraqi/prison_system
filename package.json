@@ -19,6 +19,8 @@
   },
   "homepage": "https://github.com/Saba-Izraqi/prison_system#readme",
   "dependencies": {
+    "class-validator": "^0.14.2",
+    "class-validators": "^1.0.1",
     "dotenv": "^16.5.0",
     "express": "^5.1.0",
     "pg": "^8.15.6",
@@ -26,6 +28,7 @@
     "typeorm": "^0.3.22"
   },
   "devDependencies": {
+    "@types/bcrypt": "^5.0.2",
     "@types/express": "^5.0.1",
     "@types/node": "^22.15.2",
     "@types/pg": "^8.11.14",
