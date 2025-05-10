@@ -1,5 +1,3 @@
-import { Request, Response } from "express";
-import { OfficerRepository } from "../../infrastructure/repo/officerRepository";
 import { OfficerRole, Shift } from "../../domain/enums";
 import bcrypt from "bcrypt";
 import { UserError, ServerError } from "../../app/utils/CustomErrors";
