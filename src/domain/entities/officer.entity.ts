@@ -10,7 +10,6 @@ import { BaseEntity } from "./base.entity";
 import { Prison } from "./prison.entity";
 import { Cell } from "./cell.entity";
 import { Shift, OfficerRole } from "../enums";
-import { IsString, MaxLength, MinLength, validate } from "class-validator";
 
 @Entity('officers')
 export class Officer extends BaseEntity {

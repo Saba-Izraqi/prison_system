@@ -6,9 +6,10 @@ export abstract class BaseRoute {
    
     constructor() {
         this.router = Router();
+        this.initializeController();
         this.initializeRoutes();
-    
     }
-    protected abstract initializeRoutes(): void;
 
+    protected abstract initializeController(): void;
+    protected abstract initializeRoutes(): void;
 }

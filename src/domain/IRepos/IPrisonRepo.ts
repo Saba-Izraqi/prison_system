@@ -1,6 +1,5 @@
 import {Prison} from '../entities/prison.entity';
 export interface IPrisonRepo {
-    create(prison: Prison): any;
-    update(prisonId: string, wardenId: string): any;
-
+ create(prisonData: Partial<Prison>):Promise<Prison>;
+ getByName(key: string): Promise<Prison[]>;
 }
