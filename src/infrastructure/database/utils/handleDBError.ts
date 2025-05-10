@@ -24,7 +24,7 @@ export function getCustomError (error : any) {
 
     if (handler) {
         return new UserError(handler.message , handler.statusCode);
-    }else {
+    } else {
         return new ServerError(error.message , 500);
     }
 }
