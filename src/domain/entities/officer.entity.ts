@@ -34,7 +34,7 @@ export class Officer extends BaseEntity {
 
   @ManyToOne(() => Prison, (prison) => prison.officers)
   @JoinColumn({ name: "assignedPrisonId" })
-  prison!: Prison | null;
+  prison?: Prison;
 
   @OneToMany(() => Cell, (cell) => cell.officer)
   cells!: Cell[];
