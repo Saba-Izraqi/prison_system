@@ -10,7 +10,7 @@ export class OfficerRepository implements IOfficerRepo {
         this.repo = AppDataSource.getRepository(Officer);
     }
 
-    async create(officer: Officer): Promise<Officer> {
+    async create(officer: Partial<Officer>): Promise<Officer> {
         try {
             console.log("Officer data:", officer);
             const newOfficer = this.repo.create(officer);

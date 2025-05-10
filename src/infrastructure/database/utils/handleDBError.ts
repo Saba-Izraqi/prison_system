@@ -1,5 +1,5 @@
 import { postgresErrorCodes } from "../errors";
-import { UserError, ServerError } from "../../../app/utils/CustumErrors";
+import { UserError, ServerError } from "../../../app/utils/CustomErrors";
 
 export function getCustomError (error : any) {
     const errorHandlers : Partial<Record<postgresErrorCodes,{message : string, statusCode : number}>> = {
