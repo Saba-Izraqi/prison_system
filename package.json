@@ -23,9 +23,10 @@
     "class-validators": "^1.0.1",
     "dotenv": "^16.5.0",
     "express": "^5.1.0",
-    "pg": "^8.15.6",
+    "i": "^0.3.7",
+    "pg": "^8.16.0",
     "reflect-metadata": "^0.2.2",
-    "typeorm": "^0.3.22"
+    "typeorm": "^0.3.23"
   },
   "devDependencies": {
     "@types/bcrypt": "^5.0.2",

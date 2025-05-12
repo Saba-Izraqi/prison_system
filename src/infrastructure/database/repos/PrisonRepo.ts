@@ -2,6 +2,7 @@ import { Prison } from "../../../domain/entities/prison.entity";
 import { IPrisonRepo } from "../../../domain/IRepos/IPrisonRepo";
 import { AppDataSource } from "../data-source";
 import { ILike } from 'typeorm';
+
 export class PrisonRepo implements IPrisonRepo {
   private repo = AppDataSource.getRepository(Prison);
 
