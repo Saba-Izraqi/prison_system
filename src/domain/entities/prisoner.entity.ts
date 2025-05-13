@@ -4,7 +4,7 @@ import {Prison} from './prison.entity';
 import {Cell} from './cell.entity';
 
 @Entity('prisoners')
-@Unique([ 'number' , 'Prison'])
+@Unique([ 'number'])
 export class Prisoner extends BaseEntity {
 
     @PrimaryGeneratedColumn('uuid')

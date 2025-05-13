@@ -22,22 +22,21 @@ export class CellController {
     try {
       const cellToUpdate: Partial<Cell> = req.body;
 
-      if (!cellToUpdate || !cellToUpdate.id) {
+      if (!cellToUpdate?.id) {
         res
           .status(400)
           .json({ error: "Please provide a valid Cell with an ID to update." });
-        return;
       }
 
       const updatedCell = await this.cellService.update(cellToUpdate);
 
       if (!updatedCell) {
         res.status(404).json({ error: "Cell not found or update failed." });
-        return;
       }
 
       res.status(200).json(updatedCell);
     } catch (error) {
+      console.error("Update Cell Error:", error); // Optional: log for debugging
       res
         .status(500)
         .json({ error: "Internal Server Error while updating Cell" });
@@ -46,7 +45,9 @@ export class CellController {
 
   async delete(req: Request, res: Response, next: NextFunction) {
     try {
+      console.log("deleteincontroller");
       const id = req.params.id;
+      console.log(id);
       if (!id) {
         res.status(400).json({ error: "Cell ID is required." });
         return;

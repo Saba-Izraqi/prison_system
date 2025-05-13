@@ -3,7 +3,7 @@ import { CellController } from "../controllers/cell.controller";
 import { BaseRoute } from "./base.route";
 import { CellRepo } from "../../infrastructure/database/repos/CellRepo";
 
-export class cellRoute extends BaseRoute {
+export class CellRoute extends BaseRoute {
   public path = "/cells";
   private cellController!: CellController;
 

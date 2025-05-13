@@ -7,7 +7,7 @@ export class CellRepo implements ICellRepo {
   private repo = AppDataSource.getRepository(Cell);
 
   async create(cellData: Partial<Cell>): Promise<Cell> {
-    const cell:Cell = this.repo.create(cellData);
+    const cell: Cell = this.repo.create(cellData);
     return await this.repo.save(cell);
   }
 
@@ -31,6 +31,6 @@ export class CellRepo implements ICellRepo {
   }
 
   async getById(id: string): Promise<Cell | null> {
-    return await this.repo.findOneBy({ id });
+    return await this.repo.findOne({ where: { id } });
   }
 }
