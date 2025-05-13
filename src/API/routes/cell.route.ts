@@ -15,15 +15,15 @@ export class CellRoute extends BaseRoute {
 
   protected initializeRoutes(): void {
     this.router.post("/", this.cellController.create.bind(this.cellController));
-    this.router.get("/", this.cellController.getAll.bind(this.cellController));
-    this.router.get(
-      "/:id",
-      this.cellController.getById.bind(this.cellController)
-    );
     this.router.put("/", this.cellController.update.bind(this.cellController));
     this.router.delete(
       "/:id",
       this.cellController.delete.bind(this.cellController)
+    );
+    this.router.get("/", this.cellController.getAll.bind(this.cellController));
+    this.router.get(
+      "/:id",
+      this.cellController.getById.bind(this.cellController)
     );
   }
 }

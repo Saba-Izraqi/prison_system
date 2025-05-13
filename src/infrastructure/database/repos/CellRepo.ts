@@ -12,10 +12,8 @@ export class CellRepo implements ICellRepo {
   }
 
   async update(cell: Partial<Cell>): Promise<Cell | null> {
-    if (!cell.id) return null;
-
     const existing = await this.repo.findOneBy({ id: cell.id });
-    if (!existing) return null;
+    if (!existing) thorw new CustomEr
 
     const updated = this.repo.merge(existing, cell);
     return await this.repo.save(updated);
