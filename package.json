@@ -25,7 +25,6 @@
     "class-validators": "^1.0.1",
     "dotenv": "^16.5.0",
     "express": "^5.1.0",
-    "i": "^0.3.7",
     "pg": "^8.16.0",
     "reflect-metadata": "^0.2.2",
     "transformer": "^1.2.8",

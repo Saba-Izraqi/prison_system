@@ -14,10 +14,7 @@ export class PrisonRoute extends BaseRoute {
   }
 
   protected initializeRoutes(): void {
-    this.router.post(
-      "/",
-      this.prisonController.create.bind(this.prisonController)
-    );
+    
     this.router.get(
       "/:key",
       this.prisonController.getByName.bind(this.prisonController)
