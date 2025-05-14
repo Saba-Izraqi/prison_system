@@ -5,7 +5,7 @@ import { CellRepo } from "../../infrastructure/database/repos/CellRepo";
 
 export class CellRoute extends BaseRoute {
   public path = "/cells";
-  private cellController!: CellController;
+  private controller!: CellController;
 
   protected initializeController(): void {
     const repo = new CellRepo();
