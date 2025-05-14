@@ -9,7 +9,7 @@ export class CellRoute extends BaseRoute {
 
   protected initializeController(): void {
     const repo = new CellRepo();
-    const cell = new CellService(repo);
+    const service= new CellService(repo);
     this.controller= new CellController(service);
   }
 
