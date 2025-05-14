@@ -10,6 +10,6 @@ export class PrisonService {
 
   async getByName(key: string): Promise<Prison[]> {
     const prisons = await this.prisonRepo.getByName(key);
-    return prisons; 
-}
+    return prisons;
+  }
 }

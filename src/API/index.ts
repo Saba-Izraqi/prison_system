@@ -1,5 +1,6 @@
 import express, { Application } from "express";
 import { PrisonRoute } from "./routes/prison.route";
+import { CellRoute } from "./routes/cell.route";
 
 export class AppServer {
   public app: Application;
@@ -14,7 +15,10 @@ export class AppServer {
   }
 
   private setupRoutes() {
-    const routes = [new PrisonRoute()];
+    const routes = [
+      new PrisonRoute(),
+      new CellRoute(),
+    ];
 
     routes.forEach((route) => {
       this.app.use(route.path, route.router);
