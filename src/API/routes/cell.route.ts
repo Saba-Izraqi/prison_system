@@ -8,7 +8,7 @@ export class CellRoute extends BaseRoute {
   private cellController!: CellController;
 
   protected initializeController(): void {
-    const cellRepo = new CellRepo();
+    const repo = new CellRepo();
     const cellService = new CellService(cellRepo);
     this.cellController = new CellController(cellService);
   }
