@@ -24,7 +24,7 @@ export function getCustomError (error : any) {
             statusCode: 400,
         }
     }
-    const handler = errorHandlers[error.code ?? error.status as postgresErrorCodes];
+    const handler = errorHandlers[error.code as postgresErrorCodes];
 
     if (handler) {
         return new UserError(handler.message , handler.statusCode);
