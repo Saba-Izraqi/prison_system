@@ -2,6 +2,10 @@ import { postgresErrorCodes } from "../errors";
 import { UserError, ServerError } from "../../../app/utils/CustomErrors";
 
 export function getCustomError (error : any) {
+    if (error instanceof UserError || error instanceof ServerError) {
+        return error;
+    }
+
     const errorHandlers : Partial<Record<postgresErrorCodes,{message : string, statusCode : number}>> = {
         [postgresErrorCodes.NOT_NULL_VIOLATION]: {
             message:`Missing required field: ${error.column || 'unknown field'}`,
@@ -20,7 +24,7 @@ export function getCustomError (error : any) {
             statusCode: 400,
         }
     }
-    const handler = errorHandlers[error.code as postgresErrorCodes];
+    const handler = errorHandlers[error.code ?? error.status as postgresErrorCodes];
 
     if (handler) {
         return new UserError(handler.message , handler.statusCode);
