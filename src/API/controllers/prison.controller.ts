@@ -1,5 +1,7 @@
 import { Request, Response, NextFunction } from "express";
 import { PrisonService } from "../../app/services/prison.service";
+import { plainToInstance } from "class-transformer";
+import { validate } from "class-validator";
 
 export class PrisonController {
   constructor(private prisonService: PrisonService) {}

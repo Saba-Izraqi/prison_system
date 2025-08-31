@@ -12,13 +12,14 @@ import { Prison } from "./prison.entity";
 import { Prisoner } from "./prisoner.entity";
 import { Officer } from "./officer.entity";
 
-@Entity('cells')
-@Unique(['number', 'prison'])
+@Entity("cells")
+@Unique(["number", "prison"])
 export class Cell extends BaseEntity {
   @PrimaryGeneratedColumn("uuid")
   id!: string;
 
-  @Column({ type: "int", unique: true })
+  // TODO: Remove the comment below
+  @Column({ type: "int" /*, unique: true */ })
   number!: number;
 
   @Column({ type: "varchar", length: 255 })
